@@ -1,11 +1,11 @@
 {
   "name": "language-routeros",
   "version": "0.1.0",
-  "description": "RouterOS scripting language support for Pulsar Editor",
+  "description": "RouterOS syntax highlighting for Pulsar Editor",
   "keywords": [
+    "language",
     "routeros",
     "mikrotik",
-    "language",
     "syntax",
     "highlighting"
   ],
@@ -15,10 +15,11 @@
     "pulsar": ">=1.0.0"
   },
   "categories": [
-    "Language",
-    "Programming Languages"
+    "Language"
   ],
-  "files": [
-    "grammars"
-  ]
+  "grammars": {
+    "grammars/routeros.cson": {
+      "scopeName": "source.routeros"
+    }
+  }
 }
