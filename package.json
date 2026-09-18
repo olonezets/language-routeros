@@ -1,1 +1,26 @@
-
+```json
+{
+  "name": "language-routeros",
+  "version": "0.1.0",
+  "description": "RouterOS scripting language support for Pulsar Editor",
+  "keywords": [
+    "routeros",
+    "mikrotik",
+    "language",
+    "syntax",
+    "highlighting"
+  ],
+  "repository": "https://github.com/olonezets/language-routeros",
+  "license": "MIT",
+  "engines": {
+    "pulsar": ">=1.0.0"
+  },
+  "categories": [
+    "Language",
+    "Programming Languages"
+  ],
+  "files": [
+    "grammars"
+  ]
+}
+```
