@@ -1,1 +1,82 @@
+{
+  scopeName: 'source.routeros'
+  name: 'RouterOS'
+  fileTypes: ['rsc']
 
+  patterns: [
+
+    # Comments
+    {
+      match: '#.*$'
+      name: 'comment.line.number-sign.routeros'
+    }
+
+    # Double quoted strings
+    {
+      begin: '"'
+      end: '"'
+      name: 'string.quoted.double.routeros'
+      patterns: [
+        {
+          match: '\\\\.'
+          name: 'constant.character.escape.routeros'
+        }
+      ]
+    }
+
+    # Numbers
+    {
+      match: '\\b\\d+(?:\\.\\d+)?\\b'
+      name: 'constant.numeric.routeros'
+    }
+
+    # Operators
+    {
+      match: '[!$():\\[\\]|=]'
+      name: 'keyword.operator.routeros'
+    }
+
+    # Boolean / special values
+    {
+      match: '\\b(?:yes|no|admin|access|user-manager|debug|disable|drop)\\b'
+      name: 'constant.language.routeros'
+    }
+
+    # Commands / functions
+    {
+      match: '\\b(?:add|beep|delay|detail|do|error|execute|export|file|find|for|foreach|get|global|if|import|info|led|len|local|log|nothing|parse|password|pick|ping|print|put|quit|redo|resolve|set|setup|time|toarray|tobool|toid|toip|toip6|tonum|tostr|totime|typeof|undo|while|cdrom|accept)\\b'
+      name: 'support.function.routeros'
+    }
+
+    # RouterOS menu / paths
+    {
+      match: '(?<!\\w)/(?:aaa|accounting|address|address-list|align|area|bandwidth-server|bfd|bgp|bridge|client|clock|community|config|connection|console|customer|default|dhcp-client|dhcp-server|discovery|dns|e-mail|ethernet|filter|firewall|firmware|gps|graphing|hardware|health|hotspot|identity|igmp-proxy|incoming|instance|interface|interface0|ip|ipsec|ipv6|irq|l2tp-server|lcd|ldp|logging|mac-server|mac-winbox|mangle|manual|mirror|mme|mpls|nat|nd|neighbor|network|note|ntp|ospf|ospf-v3|ovpn-server|page|peer|pim|ping|policy|pool|port|ppp|pppoe-client|pptp-server|prefix|profile|proposal|proxy|radius|resource|rip|ripng|route|routing|screen|script|security-profiles|server|service|service-port|settings|shares|smb|sms|sniffer|snmp|snooper|socks|sstp-server|system|tool|tracking|traffic-flow|traffic-generator|tree|treegroup|type|upgrade|upnp|user|user-manager|users|vlan|vrrp|watchdog|web-access|wireless)(?:\\s|$)'
+      name: 'entity.name.namespace.routeros'
+    }
+
+    # Common parameters
+    {
+      match: '\\b(?:accessible-via-web|accounting|action|active-flow-timeout|active-mode|add-default-route|address|addresses-per-mac|address-list|address-pool|admin-mac|advertise-dns|advertise-mac-address|ageing-time|allocate-udp-ports-from|allow|allowed-number|allow-guests|allow-remote-requests|always-from-cache|area|area-id|arp|authentication|authentication-password|authentication-protocol|authentication-types|auth-method|auto-mac|automatic-supout|auto-negotiation|backup-allowed|baud-rate|bidirectional-timeout|bootp-support|bridge|bridge-mode|broadcast|broadcast-addresses|burst-limit|burst-threshold|burst-time|cache-administrator|cache-entries|cache-size|certificate|chain|channel|check-interval|cipher|client-to-client-reflection|comment|connection-bytes|connection-idle-timeout|connection-mark|connection-state|contact|default|default-route-distance|dhcp-option|directory|disabled|disk-file-count|disk-file-name|distance|dns-name|dns-server|domain|dst-address|dst-address-list|dst-port|dynamic|enabled|enc-algorithm|enc-algorithms|encryption-password|encryption-protocol|engine-id|exchange-mode|gateway|group|group-ciphers|hash-algorithm|hotspot-address|http-cookie-lifetime|idle-timeout|in-interface|interface|interfaces|interval|ipsec-protocols|keepalive-timeout|limit-at|local-address|location|login|mac-address|managed-address-configuration|max-limit|max-mtu|memory-limit|metric-bgp|metric-connected|metric-default|metric-ospf|metric-static|mode|mpls-mtu|mtu|multicast|name|nat-traversal|netmask|network|new-connection-mark|new-packet-mark|new-routing-mark|ntp-server|on-backup|on-event|on-master|out-interface|packet-mark|packet-size|parent|password|path-vector-limit|permissions|pfs-group|policy|ports|preferred-gateway|priority|profile|protocol|query-interval|radius-eap-accounting|remote|remote-address|remote-port|routing-mark|routing-table|router-id|scope|secret|security|security-profile|server|service-name|source|speed|src-address|src-address-list|src-port|ssid|state-after-reboot|static-key-0|static-key-1|static-key-2|static-key-3|status-autorefresh|target|target-scope|tcp-flags|timeout|time-zone|time-zone-name|tls-certificate|tls-mode|to-address|to-addresses|to-ports|transport-address|ttl|type|udp-timeout|unicast-ciphers|user|use-radius|use-service-tag|use-vj-compression|valid-lifetime|version|vlan-id|vrid|watch-address|wds-mode|wins-server|wmm-support|wpa2-pre-shared-key|wpa-pre-shared-key|write-access)\\b'
+      name: 'variable.parameter.routeros'
+    }
+
+    # IP addresses
+    {
+      match: '\\b(?:\\d{1,3}\\.){3}\\d{1,3}(?:/\\d{1,2})?\\b'
+      name: 'constant.numeric.ip-address.routeros'
+    }
+
+    # MAC addresses
+    {
+      match: '\\b[0-9A-Fa-f]{2}(?::[0-9A-Fa-f]{2}){5}\\b'
+      name: 'constant.numeric.mac-address.routeros'
+    }
+
+    # Variables
+    {
+      match: '\\$[A-Za-z_][A-Za-z0-9_-]*'
+      name: 'variable.other.routeros'
+    }
+
+  ]
+}
