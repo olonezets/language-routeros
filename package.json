@@ -9,17 +9,15 @@
     "syntax",
     "highlighting"
   ],
-  "repository": "https://github.com/olonezets/language-routeros",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/olonezets/language-routeros.git"
+  },
   "license": "MIT",
   "engines": {
     "pulsar": ">=1.0.0"
   },
   "categories": [
     "Language"
-  ],
-  "grammars": {
-    "grammars/routeros.cson": {
-      "scopeName": "source.routeros"
-    }
-  }
+  ]
 }
