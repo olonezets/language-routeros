@@ -1,5 +1,5 @@
 {
-  "name": "rsc",
+  "name": "language-routeros",
   "version": "0.1.0",
   "description": "RouterOS syntax highlighting for Pulsar Editor",
   "keywords": [
