@@ -1,7 +1,14 @@
 {
-  "name": "language-routeros",
-  "version": "0.3.0",
+  "name": "language-rsc-routeros",
+  "version": "0.1.0",
   "description": "RouterOS syntax highlighting for Pulsar Editor",
+  "keywords": [
+    "language",
+    "routeros",
+    "mikrotik",
+    "syntax",
+    "highlighting"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/olonezets/rsc.git"
